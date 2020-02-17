@@ -1,0 +1,27 @@
+.container{
+    max-width: 120rem; // width of container 1200px if less than 1200 then occupy 100%
+    margin: 8rem auto; //center container in parernt elemnt ==body in this case
+    background-color: var(--color-grey-light-2);
+    box-shadow: var(--shadow-dark); //0 x direction, 2 rem, 6 blur, color with .3 opacity
+
+    min-height: 50rem;
+}
+
+.header{
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--color-grey-light-2);
+}
+
+.content{
+    display: flex;
+}
+
+.sidebar{
+    background-color: var(--color-grey-dark-1);
+}
+
+.hotel-view{
+    background-color: #fff;
+
+}
