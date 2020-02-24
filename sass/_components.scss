@@ -2,6 +2,7 @@
 //LOGO
 .logo {
     height: 3.25rem;
+    margin-left: 3rem;
 }
 
 
@@ -9,18 +10,55 @@
 /////////////////////////
 //SEARCH
 .search {
-    background-color: orangered;
-    &__input {
+    flex: 0 0 40%; //grow dont grow to available space // dont shrink shrink // take up 40% basis
 
+    display: flex; //a flex item can also be a flex container at the same time
+    align-items: center;
+    justify-content: center;
+    &__input {
+        //font does not get inherited automatically for input
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-2);
+        border: none;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition: all .2s;
+        margin-right: -3.25rem; //button will move on top of elemnt
+        &:focus{
+            outline: none;
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+        }
+
+        &::-webkit-input-placeholder{
+            font-weight: 100;
+            color: var(--color-grey-light-4);
+
+        }
+
+        &:active{
+            transform: translateY(2px);
+        }
+    }
+
+    //plus is the adjacent selector
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);
     }
 
     &__button {
+        border: none;
+        background-color: var(--color-grey-light-2);
 
     }
 
     &__icon {
         height: 2rem;
         width: 2rem;
+        fill: var(--color-grey-dark-3)
     }
 }
 
