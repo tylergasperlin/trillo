@@ -205,3 +205,14 @@
     text-align: center;
     padding: 2.5rem;
 }
+
+
+///////////////////
+//GALLERY
+.gallery{
+    display: flex; // this in combination of photo width 100% creates dynamic size image
+    &__photo{
+        width: 100%; // this in combination of parent container display flex creates dynamic size image
+        display: block;
+    }
+}
