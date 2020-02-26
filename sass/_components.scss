@@ -352,7 +352,56 @@
         margin-bottom: .7rem;
     }
 
+    //right before item
+    &__item::before{
+        content: ""; //required for background image
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        margin-right: .7rem;
+
+        //older browser
+        //background-image: url(../img/chevron-thin-right.svg);
+        //background-size: cover;
+
+        //newer browsers use == masks
+        //mask allows you to look behind an element and get properties of what is there
+        background-color: var(--color-primary);
+        //svg becomes the color of the background color
+        //can only see background where the svg is
+        -webkit-mask-image: url(../img/chevron-thin-right.svg);
+        -webkit-mask-size: cover;
+        mask-image: url(../img/chevron-thin-right.svg);
+        mask-size: cover;
+    }
 }
 
 ///////////////////
 //RECOMMEND
+.recommend {
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+
+    display: flex;
+    align-items: center;
+
+    &__count {
+        margin-right: auto; //push friends all the way to the side
+    }
+
+    &__friends {
+
+    }
+
+    &__photo {
+        box-sizing: border-box;
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+
+        &:not(:last-child) {
+            margin-right: -1.15rem;
+        }
+    }
+}
